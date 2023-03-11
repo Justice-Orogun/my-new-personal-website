@@ -10,9 +10,11 @@ box-sizing: border-box;
 
 
 html{
-    font-size: 15px; 
+    font-size: 10px; 
     font-family: 'Poppins', sans-serif; 
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
+
+   
 } 
 
 a{ 
@@ -26,7 +28,135 @@ a{
     align-items: center; 
     justify-content: center; 
 
+}  
+
+
+#hero{ 
+    background-image: url(images/profile.jpg); 
+    background-size: cover; 
+    background-position: top center;
+    position: relative; 
+    z-index: 1;
+}    
+
+#hero::after{ 
+    content: '';
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    height: 100%; 
+    width: 100%; 
+    background-color: black; 
+    opacity: 0.7; 
+    z-index: -1;
 } 
+
+#hero .hero{ 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 50px;
+    justify-content: flex-start;
+} 
+
+#hero h1{ 
+
+        display: block;
+        width: fit-content; 
+        font-size: 4rem;
+        position: relative; 
+        color: transparent; 
+        animation: text_reveal .5s ease forwards; 
+        animation-delay: 1.5s;
+    } 
+
+
+    #hero h1:nth-child(1){ 
+        animation-delay: 1s;
+    }
+
+    #hero h1:nth-child(2){ 
+        animation-delay: 2s;
+    }
+
+
+    #hero h1:nth-child(3){ 
+        animation: text_reveal_name .5s ease forwards;
+        animation-delay: 3s;
+    }
+
+
+#hero h1 span{ 
+
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 0; 
+    background-color: crimson; 
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+
+}
+
+
+
+#hero h1:nth-child(1) span{ 
+
+    animation-delay: .5s;
+}
+
+
+
+#hero h1:nth-child(2) span{ 
+
+    animation-delay: 1.5s;
+}
+
+
+
+#hero h1:nth-child(3) span{ 
+
+    animation-delay: 2.5s;
+}
+
+
+
+#hero .cta{ 
+    display: inline-block; 
+    padding: 10px 30px; 
+    color: crimson; 
+    background-color: transparent; 
+    border: 2px solid crimson; 
+    font-size: 2rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1rem; 
+    margin-top: 50px; 
+    transition:  .3s ease; 
+    transition-property: background-color, color;
+} 
+
+#hero .cta:hover{ 
+
+    color: white;
+    background-color: crimson;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 img{ 
     height: 100%; 
@@ -51,11 +181,11 @@ p{
     margin-bottom: 10px; 
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    text-align: center;
 } 
 
 .section-title span{ 
-    color: crimson;
+    color: crimson; 
+  
 }
 
 .cta{ 
@@ -253,87 +383,6 @@ letter-spacing: initial;
 }
 
 
-#hero{ 
-    background-image: url(images/profile.jpg); 
-    background-size: cover; 
-    background-position: top center;
-    position: relative; 
-    z-index: 1;
-}  
-
-#hero::after{ 
-    content: ''; 
-    position: absolute; 
-    left: 0; 
-    top: 0;
-    height: 100%; 
-    width: 100%; 
-    background-color: black; 
-    opacity: 0.7; 
-    z-index: -1;
-    
-    
-}
-
-
-#hero .hero{ 
-
-    width: 1200px;
-    margin: 0 auto; 
-    padding: 0 50px; 
-    justify-content: flex-start;
-}
-
-
-#hero h1{ 
-    display: block; 
-    width: fit-content; 
-    font-size: 4rem; 
-    position: relative; 
-    color: transparent;   
-    animation: text_reveal 0.5s ease forwards;
-    animation-delay: 1s;
-} 
-
-
-#hero h1:nth-child(1){ 
-    animation-delay: 1s;
-}
-
-#hero h1:nth-child(2){ 
-    animation-delay: 2s;
-} 
-
-#hero h1:nth-child(3){ 
-    animation: text_reveal_name 0.5s ease forwards;
-    animation-delay: 3s;
-} 
-
-#hero h1 span{ 
-    position: absolute 
-    top 0; 
-    left: 0; 
-    height: 100%; 
-    width: 0; 
-    background-color: crimson; 
-    animation: text_reveal_box 1s ease; 
-    animation-delay: 0.5s;
-} 
-
-#hero h1:nth-child(1) span{ 
-    animation-delay: 0.5s;
-}
-
-
-#hero h1:nth-child(2) span{ 
-    animation-delay: 1.5s;
-}
-
-
-#hero h1:nth-child(3) span{ 
-    animation-delay: 2.5s;
-}
-
 /* 
 this is for the about */
 
@@ -353,12 +402,14 @@ this is for the about */
     width: 250px; 
     height: 360px;
 
+
 }
 
 
 #about .col-right{ 
 
     width: 100%;
+ 
 } 
 
 #about .col-right h1, 
@@ -402,8 +453,7 @@ this is for the about */
 
 
 
-/* this is the service section
- */
+
 
 #service .service{ 
     flex-direction: column; 
@@ -447,6 +497,10 @@ this is for the about */
 
 }   
 
+#service .service-item p{ 
+    font-size: 1.5rem;
+}
+
 #service .service-item::after{ 
     content: ''; 
     position: absolute; 
@@ -472,7 +526,7 @@ this is for the about */
 #service .service-item p{
     color: white; 
     text-align: left;
-}
+} 
 
 
 
@@ -619,13 +673,14 @@ this is for the about */
     font-size: 1.2rem; 
     line-height: 2rem;
     font-weight: 500;
-} 
+}  
 
 
 
 #footer {
 
     background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    width: 100%;
 }
 
 
@@ -635,6 +690,7 @@ this is for the about */
     flex-direction: column; 
     padding-top: 50px; 
     padding-bottom: 10px;
+    /* width: 100%; */
 
 } 
 
@@ -665,23 +721,14 @@ margin-bottom: 10px;
 #footer p{ 
     color: white; 
     font-size: 1.3rem;
-}
+} 
 
 
-@keyframes hamburger_puls {
-    0%{ 
-        opacity: 1; 
-        transform: scale(1);
-    }
-    100%{
-        opacity: 0;
-        transform: scale(1.4);
-    }
-}
+
+/* This is the keyframe section */
 
 
-@keyframes text_reveal_box {
-    
+@keyframes text_reveal_box { 
     50%{ 
         width: 100%; 
         left: 0;
@@ -693,25 +740,195 @@ margin-bottom: 10px;
 } 
 
 
-
-
-@keyframes text_reveal{
+@keyframes text_reveal {
     
     100%{ 
         color: white;
     }
-    
-} 
+}
 
 
-@keyframes text_reveal_name{
-    
+@keyframes text_reveal_name {
+
     100%{ 
-        color: crimson; 
-        font-weight: 500;
+        color: crimson;
     }
+
     
+}  
+
+
+@keyframes hamburger_puls{ 
+    0%{ 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    100%{ 
+        opacity: 0; 
+        transform: scale(1.4); 
+    }
+}
+
+
+/* This is the media query  */
+@media only screen and (min-width: 768px) { 
+
+    .cta {
+        font-size: 2.5rem; 
+        padding: 20px 60px;
+    } 
+
+    h1.section-title{ 
+        font-size: 6rem;
+    }  
+
+
+    #hero h1{ 
+        font-size: 7rem; 
+    } 
+
+
+    #service .service-bottom .service-item{ 
+        flex-basis: 45%; 
+        margin: 2.5%;
+    }
+
+
+    #projects .project-item{ 
+        flex-direction: row; 
+
+        
+    }
+
+    #projects .project-item:nth-child(even) {
+        flex-direction:  row-reverse;
+    } 
+
+    #projects .project-item{ 
+        height: 400px; 
+        margin: 0; 
+        width: 100%; 
+        border-radius: 0;
+    }
+
+    #projects .all-projects .project-info{ 
+        height: 100%;  
+
+    }
+
+    #projects .all-projects .project-img{ 
+
+        height: 100%;
+    }
+
+
+
+
+    #about .about{ 
+        flex-direction:  row;
+    } 
+
+    #about .col-left{ 
+        width: 600px; 
+        height: 400px; 
+        padding-left: 60px;
+    }  
+
+    #about .col-left .about-img::after{ 
+        left: -45px; 
+        top: 34px; 
+        height: 98%; 
+        width: 98%; 
+        border: 10px solid crimson;
+    } 
+
+    #about .col-right{ 
+        text-align: left; 
+        padding: 30px;
+    } 
+
+    #about .col-right h1{
+        text-align: left;
+    }
+
+    
+
+
+    #contact .contact{ 
+        flex-direction: column; 
+        padding: 100px 0; 
+        align-items: center; 
+        justify-content: center;
+        min-width: 20vh;
+    }
+
+
+    #contact .contact-item{ 
+        width: 100%; 
+        margin: 5px; 
+        flex-direction: row;
+    }
+
+
+    #contact .contact-items{ 
+
+        width: 100%; 
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-evenly; 
+        margin: 0;
+
+    }
+
+
+    #contact .contact-info{ 
+
+        width: 100%; 
+        text-align: left; 
+        padding-left: 20px;
+
+    }
+
+
 } 
 
+
+@media only screen and (min-width: 1200px) { 
+
+    #header .hamburger{
+        /* display: none; */
+    } 
+
+    #header .nav-list ul{ 
+        position: initial; 
+        display: block; 
+        height: auto;
+        width: fit-content; 
+        background-color: transparent; 
+
+    } 
+
+
+    #header .nav-list ul li{ 
+        display: inline-block; 
+    } 
+
+
+    #header .nav-list ul li a{ 
+        font-size: 1.5rem;
+    } 
+
+    #header .nav-list ul li a::after{ 
+        display: none;
+    } 
+
+
+
+
+    #service .service-bottom .service-item{ 
+        flex-basis: 25%; 
+        margin: 1.5%;
+    }
+}
 
 
