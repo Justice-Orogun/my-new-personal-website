@@ -670,7 +670,7 @@ this is for the about */
 
 #contact .contact-info h3{ 
 
-    font-size: 1.2rem; 
+    font-size: 1.5rem; 
     line-height: 2rem;
     font-weight: 500;
 }  
@@ -703,6 +703,11 @@ margin-top: 10px;
 margin-bottom: 10px;
 
 
+} 
+
+#footer h2{ 
+    font-size: 2rem;
+    color: white;
 }
 
 #footer .social-media{ 
@@ -715,6 +720,12 @@ margin-bottom: 10px;
     height: 50px; 
     width: 50px;
     margin: 0 5px;
+}
+
+
+#footer  .social-item .fa{ 
+    font-size: 20px;
+    padding: 20px;
 }
 
 
@@ -770,7 +781,7 @@ margin-bottom: 10px;
 }
 
 
-/* This is the media query  */
+/* This is for tablets   */
 @media only screen and (min-width: 768px) { 
 
     .cta {
@@ -851,8 +862,6 @@ margin-bottom: 10px;
         text-align: left;
     }
 
-    
-
 
     #contact .contact{ 
         flex-direction: column; 
@@ -892,6 +901,7 @@ margin-bottom: 10px;
 
 } 
 
+/* This is for desktop */
 
 @media only screen and (min-width: 1200px) { 
 
@@ -921,8 +931,6 @@ margin-bottom: 10px;
     #header .nav-list ul li a::after{ 
         display: none;
     } 
-
-
 
 
     #service .service-bottom .service-item{ 
